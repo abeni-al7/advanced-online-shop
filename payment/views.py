@@ -46,7 +46,7 @@ def payment_process(request):
         return redirect(session.url, code=303)
 
     else:
-        return redirect(request, "payment/process.html", locals())
+        return render(request, "payment/process.html", {"order": order})
 
 
 def payment_completed(request):
