@@ -35,6 +35,8 @@ def order_create(request):
             request.session["order_id"] = order.id
             # redirect for payment
             return redirect("payment:process")
+        else:
+            return  render(request, "orders/order/create.html", {"cart": cart, "form": form})
     else:
         print("Form is not valid")
         form = OrderCreateForm()
