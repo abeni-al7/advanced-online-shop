@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     "shop.apps.ShopConfig",
     "coupons.apps.CouponsConfig",
     "rosetta",
+    "parler",
 ]
 
 MIDDLEWARE = [
@@ -157,3 +158,15 @@ STATIC_ROOT = BASE_DIR / "static"
 REDIS_HOST = "localhost"
 REDIS_PORT = 6379
 REDIS_DB = 1
+
+# django-parler settings
+PARLER_LANGUAGES = {
+    None: (
+        {"code": "en"},
+        {"code": "es"},
+    ),
+    "default": {
+        "fallback": "en",
+        "hide_untranslated": False,
+    },
+}
